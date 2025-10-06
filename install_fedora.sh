@@ -30,12 +30,10 @@ else
   echo "RPM encontrado en el zip: $AF_RPM"
 fi
 
-# Instala los RPMs (puede requerir sudo)
 echo "Instalando RPMs..."
 sudo dnf install -y "$AF_RPM"
 sudo dnf install -y "$J11_RPM"
 
-# Limpia archivos temporales
 echo "Limpiando archivos temporales..."
 rm -f "$AF_FILE" "$AF_RPM" "$J11_RPM"
 
