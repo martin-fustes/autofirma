@@ -4,7 +4,7 @@ URL_AF="https://firmaelectronica.gob.es/content/dam/firmaelectronica/descargas-s
 URL_J11="https://cdn.azul.com/zulu/bin/zulu11.82.19-ca-jdk11.0.28-linux.x86_64.rpm"
 
 AF_FILE="AutoFirma_Linux_Fedora.zip"
-AF_RPM="autofirma-1.9-1.noarch_FEDORA.rpm"
+AF_RPM="autofirma-1.*-*.noarch_FEDORA.rpm"
 J11_RPM="zulu11.82.19-ca-jdk11.0.28-linux.x86_64.rpm"
 
 DESKTOP_FILE="$HOME/.local/share/applications/autofirma.desktop"
@@ -16,6 +16,8 @@ wget -q --show-progress "$URL_AF"
 
 echo "Extrayendo RPM del zip..."
 unzip -o "$ZIP_FILE"
+
+AF_RPM=$(find . -maxdepth 1 -name $AF_RPM | head -n 1)
 
 echo "Descargando rpm de java 11..."
 wget -q --show-progress -O "$J11_RPM" "$URL_J11"
