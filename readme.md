@@ -1,1 +1,1 @@
-Para que funcione autofirma en fedora necesita java11
+Para que funcione autofirma necesita java11
